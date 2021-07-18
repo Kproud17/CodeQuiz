@@ -2,13 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Quiz</title>
-    <link rel="stylesheet" href="style.css">
-    
-</head>
+    <title> Coding Quiz Challange </title>
+    <link href="./assets/css/style.css" rel="stylesheet">
+    </head>
 <body>
-    
+    <header>
+        <h1> Coding Quiz Challange </h1>
+    </header>
+    <main class="card" id="card">
+        <section class="instructions" id="instructions">
+            <h2>Instructions</h2>
+            <p>
+                Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalized your score/time by ten seconds!
+            </p>
+        
+            <div class="start">
+                <button class="btn" id="start-btn">START</button>
+            </div>
+        </section>
+        <div class="feedback hide"></div>
+        <section class="quiz-container hide">
+            <h2 class="question-header"></h2>
+            <div class="question"></div>
+            <div class="answer-spot ">
+                <div class="answer-spot-item">
+                    <button class="btn" id="btn-a" value="a"></button>
+                </div>
+                <div class="answer-spot-item">
+                    <button class="btn" id="btn-b" value="b"></button>
+                </div>
+                <div class="answer-spot-item">
+                    <button class="btn" id="btn-c" value="c"></button>
+                </div>
+                <div class="answer-spot-item">
+                    <button class="btn" id="btn-d" value="d"></button>
+                </div>
+            </div>
+        </section>
+        <section class="end">
+        </section>
+    </main>
+    <footer>
+        <div class="scores-card">
+            <div class="high-score">
+                <a href="./highscore.html">The High Scores</a>
+            </div>
+            <div class="score"></div>
+        </div>
+    </footer>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
