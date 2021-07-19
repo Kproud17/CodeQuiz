@@ -1,0 +1,220 @@
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+    background-color: #cfd8dc;
+    color: #212121;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #212121;
+}
+
+header {
+    background-color: #ffffff;
+    border: 1px solid #212121;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .35);
+    padding: 20px;
+    margin: 50px auto 20px auto; 
+    text-align: center;
+    width: 75%;
+}
+
+.card {
+    background-color: #bdbdbd;
+    border: 10px solid #3d3d3d;
+    margin: 20px auto;
+    padding: 40px 50px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .25);
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card p {
+    margin-top: 15px;
+}
+
+.btn {
+    width: 80%;
+    padding: 25px 60px;
+    border: solid #3d3d3d; 
+    border-radius: 20px;
+    background-color: #bdbdbd;
+    color: #ffffff;
+    outline: #3d3d3d;
+    font-weight: bold;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+.btn:hover {
+    background-color: #9e9e9e;
+    font-weight: bolder;
+}
+
+/* the instructions  */
+
+.start {
+    text-align: center;
+}
+
+#start-btn {
+    width: 200px;
+    padding: 30px auto;
+    box-shadow: 10px 10px 10px;
+    margin-top: 50px;
+   
+}
+
+/* the quiz */
+
+.answer-spot {
+    display: grid;
+    width: 85%;
+    grid-template: 1fr ;
+    grid-gap: 50px;
+    margin-top: 25px;
+}
+
+
+.question-header {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.correct .feedback {
+    color: #455a64;
+}
+
+.correct {
+    background-color: #607d8b;
+}
+
+
+.incorrect {
+    background-color:rgb(170, 77, 53);
+}
+
+
+
+.hide {
+    display: none;
+}
+
+/* the end game */
+
+.end {
+    text-align: center;
+}
+
+#name-btn {
+    width: 400px;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.name-input {
+    width: 400px;
+    display: inline-block;
+    margin: 35px auto 10px auto;
+    padding: 7px;
+    border: 1px solid #212121;
+    border-radius: 5px;
+    outline: none;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+
+footer {
+    background-color: #ffffff;
+    border: 1px solid #212121;
+    padding: 25px;
+    margin: 20px auto 20px auto; 
+    text-align: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .25);
+    width: 75%;
+  
+}
+
+.scores-card {
+   
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+
+/* the high score spot */ 
+#score-card h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#score-table {
+    width: 50%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+#score-table tr:nth-child(2n-1) {
+    background-color: #455a64(167, 157, 151, 0.7);
+}
+
+#score-table td {
+    padding: 10px;
+}
+
+/* media styles  */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px;
+        margin: 30px auto 15px auto; 
+        width: 80%;
+    }
+    
+    .card {
+        margin: 15px auto;
+        padding: 25px 30px;
+        width: 80%;
+    }
+    
+    .card p {
+        margin-top: 10px;
+    }
+    
+
+    .name-input {
+        width: 50%;
+    }
+
+
+    #score-table {
+        width: 75%;
+    }    
+
+    #name-btn {
+        width: 50%;
+        padding: 15px;
+    }
+    
+    footer {
+        width: 80%;
+    }
+
+}
+
+
+
