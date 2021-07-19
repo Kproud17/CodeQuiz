@@ -20,7 +20,6 @@ a {
 header {
     background-color: #ffffff;
     border: 1px solid #212121;
-    border-radius: 100px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .35);
     padding: 20px;
     margin: 50px auto 20px auto; 
@@ -30,8 +29,7 @@ header {
 
 .card {
     background-color: #bdbdbd;
-    border: 1px solid #212121;
-    border-radius: 100px;
+    border: 10px solid #3d3d3d;
     margin: 20px auto;
     padding: 40px 50px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .25);
@@ -49,11 +47,11 @@ header {
 .btn {
     width: 80%;
     padding: 25px 60px;
-    border: solid;
+    border: solid #3d3d3d; 
     border-radius: 20px;
     background-color: #bdbdbd;
     color: #ffffff;
-    outline:#212121;
+    outline: #3d3d3d;
     font-weight: bold;
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
     font-size: 20px;
@@ -61,6 +59,7 @@ header {
 
 .btn:hover {
     background-color: #9e9e9e;
+    font-weight: bolder;
 }
 
 /* the instructions  */
@@ -84,7 +83,6 @@ header {
     width: 85%;
     grid-template: 1fr ;
     grid-gap: 50px;
-    justify-content: space-between;
     margin-top: 25px;
 }
 
@@ -104,7 +102,7 @@ header {
 
 
 .incorrect {
-    background-color:red;
+    background-color:rgb(170, 77, 53);
 }
 
 
@@ -127,7 +125,7 @@ header {
 
 .name-input {
     width: 400px;
-    display: block;
+    display: inline-block;
     margin: 35px auto 10px auto;
     padding: 7px;
     border: 1px solid #212121;
@@ -147,7 +145,7 @@ footer {
     text-align: center;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .25);
     width: 75%;
-    border-radius: 100px;
+  
 }
 
 .scores-card {
@@ -157,5 +155,66 @@ footer {
     flex-wrap: wrap;
    
 }
+
+
+/* the high score spot */ 
+#score-card h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#score-table {
+    width: 50%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+#score-table tr:nth-child(2n-1) {
+    background-color: #455a64(167, 157, 151, 0.7);
+}
+
+#score-table td {
+    padding: 10px;
+}
+
+/* media styles  */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px;
+        margin: 30px auto 15px auto; 
+        width: 80%;
+    }
+    
+    .card {
+        margin: 15px auto;
+        padding: 25px 30px;
+        width: 80%;
+    }
+    
+    .card p {
+        margin-top: 10px;
+    }
+    
+
+    .name-input {
+        width: 50%;
+    }
+
+
+    #score-table {
+        width: 75%;
+    }    
+
+    #name-btn {
+        width: 50%;
+        padding: 15px;
+    }
+    
+    footer {
+        width: 80%;
+    }
+
+}
+
 
 
