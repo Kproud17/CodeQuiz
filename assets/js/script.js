@@ -1,3 +1,13 @@
+
+var background = document.querySelector("body");
+var startBtn = document.querySelector("#start-btn");
+var quizEl = document.querySelector(".quiz-container");
+var endEl = document.querySelector(".end");
+var scoreEl = document.querySelector(".score");
+var questionCounter = 0;
+var currentScore = 75;
+var highScores = [];
+
 var codeQuiz = [
     {
         question: "Who invented JavaScript?", 
@@ -41,7 +51,7 @@ var codeQuiz = [
 
     },
     {
-        question: "Which of the following function of String object creates an HTML hypertext link that requests another URL"
+        question: "Which of the following function of String object creates an HTML hypertext link that requests another URL",
         a: "link()",
         b: "sub()",
         c: "sup()",
@@ -52,14 +62,6 @@ var codeQuiz = [
 ]
 
 
-var background = document.querySelector("body");
-var startBtn = document.querySelector("#start-btn");
-var quizEl = document.querySelector(".quiz-container");
-var endEl = document.querySelector(".end");
-var scoreEl = document.querySelector(".score");
-var questionCounter = 0;
-var currentScore = 75;
-var highScores = [];
 
 
 
@@ -68,13 +70,13 @@ var highScores = [];
 var tracker = function() {
     scoreEl.textContent = "Time Remaining: 75"
 
-    var scoreInterval = setInterval(function() {
+    var scoreTracker = setInterval(function() {
         if (currentScore > 0 && questionCounter < codeQuiz.length) {
             scoreEl.textContent = "Time Remaining: " + currentScore;
             currentScore--
         }
         else {
-            clearInterval(scoreInterval);
+            clearInterval(scoreTracker);
             endQuiz();
         }
     }, 1000);
@@ -123,11 +125,11 @@ var checkAnswer = function(event) {
     else {
         if (currentScore >= 5) {
             currentScore -= 5;
-            scoreEl.textContent = "Current score: " + currentScore;
+            scoreEl.textContent = "Time Remaining: " + currentScore;
             }
         background.className = "incorrect";
         feedbackEl.classList.remove("hide");
-        feedbackEl.textContent = console.log("Incorrect Answer");
+        feedbackEl.textContent = console.log("Choice " + clickedBtn + " was Incorrect!");
     }
 
     questionCounter++
@@ -144,7 +146,7 @@ var endQuiz = function() {
     quizEl.remove();
     scoreEl.remove();
  
-    endEl.innerHTML = "<h2 class='end-title'>Quiz Finished!</h2><p>Your final score is " + currentScore + ".  Please enter your name.</p>";
+    endEl.innerHTML = "<h2>Quiz Completed!</h2><p>Your final score is " + currentScore + ". Type your name in the box below to record your score!</p>";
 
     var scoreForm = document.createElement("form");
     scoreForm.id = "score-form";
@@ -165,5 +167,41 @@ var endQuiz = function() {
 
     nameBtn.addEventListener("click", saveScore);
 }
+
+var saveScore = function() {
+    event.preventDefault()
+
+    var playerName = document.querySelector("input[name='player-name']").value;
+
+    if (!playerName) {
+        alert("Please enter your name!")
+    }
+    else {
+        var scoreObj = {
+            name: playerName,
+            score: currentScore
+        }
+    
+        highScores.push(scoreObj);
+        document.querySelector("#score-form").reset();
+        localStorage.setItem("scores", JSON.stringify(highScores));
+        document.location.href = "highscore.html";
+    }
+}
+
+var loadScores = function() { 
+    highScores = localStorage.getItem("scores");
+
+    if (!highScores) {
+        highScores = [];
+        return false;
+    }
+
+    highScores = JSON.parse(highScores);
+}
+
+
+
+loadScores();
 
 startBtn.addEventListener("click", executeQuiz)
