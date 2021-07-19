@@ -6,6 +6,7 @@ Code Quiz developed using HTML, CSS, JavaScript.
 
 ##Deployed Application
 
+https://kproud17.github.io/CodeQuiz/
 
 
 
