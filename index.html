@@ -9,18 +9,23 @@
 <body>
     <header>
         <h1> Coding Quiz Challange </h1>
+        <div class="score"></div>
     </header>
     <main class="card" id="card">
         <section class="instructions" id="instructions">
             <h2>Instructions</h2>
             <p>
                 Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalized your score/time by ten seconds!
+                <br> 
+                <br>
+                If the screen turns Red, you got the question wrong.
             </p>
         
             <div class="start">
                 <button class="btn" id="start-btn">START</button>
             </div>
         </section>
+        
         <div class="feedback hide"></div>
         <section class="quiz-container hide">
             <h2 class="question-header"></h2>
@@ -32,6 +37,8 @@
                 <div class="answer-spot-item">
                     <button class="btn" id="btn-b" value="b"></button>
                 </div>
+
+
                 <div class="answer-spot-item">
                     <button class="btn" id="btn-c" value="c"></button>
                 </div>
@@ -44,11 +51,11 @@
         </section>
     </main>
     <footer>
-        <div class="scores-card">
+        <div class="score-card">
             <div class="high-score">
                 <a href="./highscore.html">The High Scores</a>
             </div>
-            <div class="score"></div>
+            
         </div>
     </footer>
     <script src="./assets/js/script.js"></script>

@@ -146,7 +146,7 @@ var endQuiz = function() {
     quizEl.remove();
     scoreEl.remove();
  
-    endEl.innerHTML = "<h2>Quiz Completed!</h2><p>Your final score is " + currentScore + ". Type your name in the box below to record your score!</p>";
+    endEl.innerHTML = "<h2>Quiz Completed!</h2><p><b>Your final score is " + currentScore + ".</b><br><br> Type your name in the box below to record your score!</p>";
 
     var scoreForm = document.createElement("form");
     scoreForm.id = "score-form";

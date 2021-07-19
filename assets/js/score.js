@@ -9,7 +9,7 @@ var loadScores = function() {
 
         var noScores = document.createElement("div");
         noScores.setAttribute("style", "text-align: center");
-        noScores.textContent = "There are no scores yet!  Play the quiz to add your score!"
+        noScores.textContent = "No scores to show"
         document.querySelector("#score-card").appendChild(noScores);
 
         return false;
